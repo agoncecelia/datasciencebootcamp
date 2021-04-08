@@ -23,7 +23,6 @@ while user_input != 'q':
             print(x.get_attendance())
     elif user_input == 'attendance':
         inp = input("C to check attendance, A to add attendance: ")
-        print(inp)
         if inp == 'A':
             for x in students_list:
                 inp = input("{} for here write H for missing write M: ".format(x.get_name()))
@@ -38,11 +37,11 @@ while user_input != 'q':
         id_input = input("Please provide user id: ")
         for x in students_list:
             if id_input == x.get_id():
-                course_input = input("User found, provide course name: ")
+                course_input = input(x.get_name() + " found, provide course name: ")
                 x.get_courses()[course_input] = []
                 for i in range(1, 4):
                     grade_input = input("Write grade " + str(i) + " for " + course_input + " ")
-                    x.get_courses()[course_input].append(grade_input)
+                    x.get_courses()[course_input].append(int(grade_input))
         
 
 
